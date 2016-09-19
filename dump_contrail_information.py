@@ -5,6 +5,7 @@
 import json
 import urllib2
 import sys
+import getpass
 
 
 class ContrailRestClient:
@@ -75,7 +76,7 @@ if __name__ == '__main__':
     # prompt for authentication credentials
     host = raw_input("Enter your Contrail Cluster IP: ")
     username = raw_input("Enter your Contrail Cluster Username: ")
-    password = raw_input("Enter your Contrail Cluster Password: ")
+    password = getpass.getpass("Enter your Contrail Cluster Password: ")
 
     # instantiate our rest client
     crc = ContrailRestClient(username, password, host)
